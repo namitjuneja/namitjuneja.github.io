@@ -1,0 +1,67 @@
+body {
+  font-family: 'Lato';
+  background-color: #fff;
+  color: #000;
+  margin:0;
+  font-weight: 200;
+}
+
+h1 {
+  font-weight: 400;
+  font-size:27px;
+  margin-bottom: 0px;
+}
+
+h2 {
+  margin-top:10px;
+  font-weight: 200;
+  font-size: 17px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding:0;
+}
+
+.social li {
+  line-height: 20px;
+}
+
+.main li {
+  line-height: 25px;
+}
+
+.projects li {
+  line-height: 40px;
+}
+
+.projects a {
+  text-decoration: none;
+  color:#939393;
+}
+.projects a:hover {
+  color:#000;
+}
+
+a {
+  text-decoration: none;
+  color:#3f3f3f;
+}
+a:hover {
+  color:#000;
+}
+
+
+.container {
+  position: absolute;
+  height: 100px;
+  left: 7%;
+  top:20%;
+}
+
+.content {
+  margin-top:20px;
+  font-size:15px;
+}
+

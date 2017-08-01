@@ -1,0 +1,130 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sector 23 RWA Security</title>
+    <style type="text/css">
+      
+      body {
+        background: #F8A434;
+        font-family: 'Lato', sans-serif;
+        color: #FDFCFB;
+        text-align: center;
+      }
+
+
+      form {
+        width: 450px;
+        margin: 17% auto;
+      }
+
+
+      .header {
+        font-size: 72px;
+        text-transform: uppercase;
+        letter-spacing: 7px;
+      }
+
+
+      .description {
+        font-size: 37px;
+        letter-spacing: 1px;
+        line-height: 1.3em;
+        margin: -2px 0 45px;
+        color: black;
+      }
+
+
+      .input {
+        display: flex;
+        align-items: center;
+      }
+
+
+      .button {
+        height: 44px;
+        border: none;
+      }
+
+        
+      #email {
+        width: 75%;
+        height: 100px;
+        background: #FDFCFB;
+        font-family: inherit;
+        color: #737373;
+        letter-spacing: 1px;
+        text-indent: 5%;
+        border-radius: 5px 0 0 5px;
+        font-size: 54px;
+        font-weight: bold;
+      }
+
+
+      #submit {
+        width: 25%;
+        height: 100px;
+        background: #25c50c;
+        font-family: inherit;
+        font-weight: bold;
+        color: inherit;
+        letter-spacing: 1px;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        font-size: 30px;
+        transition: background .3s ease-in-out;
+      }
+        
+
+      #submit:hover {
+        background: #d45d7d;
+      }
+        
+
+      input:focus {
+        outline: none;
+        outline: 2px solid #E86C8D;
+        box-shadow: 0 0 2px #E86C8D;
+      }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <form name="RWA Sector 23" id="fform">
+      <div class="header">
+         <p>Sector 23 </p></p>RWA</p>
+      </div>
+      <div class="description">
+        <p>Enter TOKEN number</p>
+      </div>
+      <div class="input">
+        <input type="number" class="button" id="email" name="token" placeholder="Token">
+        <input type="submit" class="button" id="submit" value="SEND">
+      </div>
+    </form>
+    <script>
+    $(function() {
+                $("#fform").on("submit", function(e) {
+                    e.preventDefault();
+                    $.ajax({
+                        url: "http://ec2-52-214-83-99.eu-west-1.compute.amazonaws.com/",
+                        type: 'GET',
+                        data: $(this).serialize(),
+                        beforeSend: function() {
+                            // $("#message").html("sending...");
+                            console.log("sending...")
+
+                        },
+                        success: function(data) {
+                            // $("#message").hide();
+                            // $("#response").html(data);
+                            console.log("Sent Successful")
+
+                        }
+                    });
+                    $("#email").val('');
+                });
+            });
+    </script>
+  </body>
+</html>
