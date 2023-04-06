@@ -1,57 +1,53 @@
+<!DOCTYPE html>
 <html>
+
 <head>
-<title>Namit Juneja</title>
-<style>
-body 
-{
- font-family: monospace;
-}
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Namit's Website"/>
+    <meta name="author" content="Namit Juneja"/>
 
-div 
-{
-    white-space: pre;
-    font-size: 2em;
-}
-p
-{
-	padding-left: 1em;
-}
-.nofmt
-{
-	color: #F57F17;
-}
-.wall
-{
-	color: black;
-}
-#winamp2-js
-{
-	width: 10px;
-}
-</style>
+    <title>Namit Juneja</title>
+
+    <!-- CSS -->
+    <link href="main.css" rel="stylesheet" media="all">
+
+    <!-- FontAwesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Favicon -->
+    <link href="icons/n-color.png" rel="icon">
 </head>
+
 <body>
-<div class=nofmt>
-                         ''~``
-                        ( o o )
-<span class=wall>+------------------</span>.oooO<span class=wall>--</span>(_)<span class=wall>--</span>Oooo.<span class=wall>------------------+</span>
-<span class=wall>|</span>                                                     <span class=wall>|</span>
-<span class=wall>|</span>                    .oooO                            <span class=wall>|</span>
-<span class=wall>|</span>                    (   )   Oooo.                    <span class=wall>|</span>
-<span class=wall>+---------------------</span>\ (<span class=wall>----</span>(   )<span class=wall>--------------------+</span>
-                       \_)    ) /
-                             (_/
-</div>
-<p>Namit Juneja's little corner on the internet.</p> 
-
-<p>Not much over here at the moment. </p>
-
-<p>Will be coming up with an updated site very soon.</p>
-
-<p>You can get in touch with me at: hello [at] namitjuneja [dot] com</p>
-
-<div id='winamp2-js'></div>
-<script src="winamp.js"></script>
+	<section class="root fade-in">
+    <img src="icons/n.png" class="main-icon invert"></img>
+    <div class="content">
+      <span class="summary-text">Hi, I'm Namit.</span>
+      <span class="summary-text">I am a PhD student in the <u><a target="_blank" href="https://ubdsgroup.github.io/">Data Science Lab </a></u>at Univeristy at Buffalo, advised by <u><a target="_blank" href="https://ubdsgroup.github.io/team/varun-chandola/">Dr. Varun Chandola.</a></u></span>
+      <span class="summary-text">
+        I do research in machine learning with a focus on Bayesian Optimization and Gaussian Processes. <br>
+        My work primarily focusses on making these methods more cost efficient and scalable to higher dimensions. 
+      </span>
+    </div>
+    <span class="contact-icons">
+        <a target="_blank" href="mailto:juneja.namit@gmail.com">
+            <img class="contact-icon" src="icons/email-icon.png"></img>
+        </a>
+        <a target="_blank" href="http://www.linkedin.com/in/namitjuneja">
+            <img class="contact-icon" src="icons/linkedin-icon.png"></img>
+        </a>
+        <a target="_blank" href="assets/Namit%20Juneja's%20Resume.pdf">
+            <img class="contact-icon" src="icons/cv-icon.png"></img>
+        </a>
+    </span>
+    <span class="accent-text hometown">buffalo, ny</span>
+    <span class="accent-text year" id="year"></span>
+  </section>
+  <script>
+    document.getElementById("year").innerHTML = '© ' + new Date().getFullYear();
+  </script>
 </body>
- 
+
 </html>
