@@ -94,13 +94,13 @@
   -moz-animation-duration: 1s;
   animation-duration: 1s;
 
-  animation-delay: 3s;
+  animation-delay: 2s;
 }
 
 .arrow {
 	width: 0;
 	height: 20px;
-	border: 1px solid #fff;
+	border: 1px solid #fffdfd;
 	position: relative;
 	animation: scroll 1.5s infinite;
 	-webkit-animation: scroll 1.5s infinite;
@@ -114,7 +114,7 @@
     height: 10px;
 		
 		/* triangle */
-    border-top: 10px solid #fff;
+    border-top: 10px solid #fffdfd;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
 	}
@@ -193,7 +193,7 @@ body {
 
 u {
     background: rgba(255, 255, 255, 0.1);
-    color: white;
+    color: #eae8e8
     text-decoration: none !important;
 }
 
@@ -231,7 +231,7 @@ a {
 }
 
 .summary-text {
-  color: #fff;
+  color: #fffdfd;
   display: block;
   font-family: "Circular Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 3vh;
@@ -240,7 +240,7 @@ a {
 }
 
 .summary-subtext {
-  color: #fff;
+  color: #fffdfd;
   display: block;
   font-family: "Circular Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 3vh;
@@ -267,8 +267,6 @@ a {
   font-weight: 700;
   text-transform: uppercase;
 }
-
-
 
 .mouse-container {
 	width: 100%;
@@ -340,7 +338,7 @@ a {
   align-items: center;
   column-gap: 2.5rem;
   list-style: none;
-  background-color: #464344;
+  background-color: rgba(255, 255, 255, 0.12);
   border-radius: 12.5rem;
   height: 52px
   width: fit-content;
@@ -351,7 +349,7 @@ a {
 }
 
 .navigation-item {
-  color: #fff;
+  color: #fffdfd;
   opacity: 0.3;
   letter-spacing: .3px;
   font-size: 1.8vh;
@@ -373,30 +371,41 @@ a {
   display: flex;
   justify-content: center;
   margin-top: 5vh;
+  height: 65vh;
 }
 
 .main-content {
-  color: #fff;
+  color: #fffdfd;
   display: none;
-  margin: 10vh 5vw;
+  height: fit-content;
   display: none;
   width: 70%;
   font-size: 2vh;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin: auto;
 }
 
 .main-content.active {
   display: flex;
 }
 
-.education-box-left {
-  width: 30%;
-  min-width: 300px;
-  margin: 0 5vw;
-  display: flex;
+.main-content.education {
+  max-width: 50vw;
+}
 
-  margin-right: 0;
+.main-content.experience {
+  max-width: 60vw;
+}
+
+.main-content.publications {
+  margin-top: 5vh;
+}
+
+.education-box-left {
+  width: 50%;
+  height: fit-content;
+  display: flex;
 
   .education-wrapper > .duration {
     margin: 5px 0 25px 0;
@@ -408,16 +417,16 @@ a {
 }
 
 .education-box-right {
-  width: 30%;
-  min-width: 300px;
-  margin: 5vw;
+  width: 45%;
+  height: fit-content;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
   margin-left: 0;
 
   .education-wrapper:first-of-type {
-    margin-bottom: 65px;
+    margin-bottom: 8vh;
   }
 
   .education-wrapper > .duration {
@@ -449,6 +458,7 @@ a {
   justify-content: start;
   width: 37%;
   min-width: 300px;
+  max-width: 500px;
   align-items: start;
 }
 
@@ -458,6 +468,7 @@ a {
   justify-content: start;
   width: 37%;
   min-width: 300px;
+  max-width: 500px;
   align-items: start;
 }
 
@@ -475,7 +486,6 @@ a {
   justify-content: space-between;
   width: 100%;
   margin: 1.5vh 0;
-  min-width: 350px;
 
   .experience-box-left {
     font-size: 2vh;
@@ -532,9 +542,9 @@ a {
   display: flex;
   flex-direction: column;
   align-items: start;
-  border: 1px solid #fff;
+  border: 1px solid #fffdfd;
   padding: 1vh 2vh;
-  border-radius: 20px;
+  border-radius: 15px;
 
   .title,.authors,.conference,.links {
     margin: 1vh 0;
@@ -552,19 +562,20 @@ a {
 
   .conference {
     margin-bottom: 6px;
-    font-style: italic;
     font-size: 1.8vh;
   }
 
   .links {
-    margin-top: 1vh;
+    margin-top: 1.5vh;
     font-size: 1.5vh;
-    text-decoration: underline;
-    text-decoration-style: dotted;
   }
   
   .paper-link {
     margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0.16);
+    border-radius: 12.5rem;
+    padding: 5px 8px;
+    font-size: 1.15vh;
   }
 }
 
@@ -585,6 +596,46 @@ a {
 
   padding: 0 5vw;
   z-index: 100;
+
+  .email_link:hover{ 
+    cursor: grab;
+  }
+
+  .email_link_2:hover{ 
+    cursor: grab;
+  }
+
+  .email_link {
+    position:relative; /* making the .email_link <a> a container for the tooltip text */
+  }
+  
+  .email_link:before {
+    content: attr(data-text); /* here's the magic */
+    position:absolute;
+    
+    /* vertically center */
+    top:50%;
+    transform:translateY(-215%);
+    
+    /* move to right */
+    right:100%;
+    margin-right:-50px; /* and add a small left margin */
+    
+    /* basic styles */
+    width:70px;
+    padding:2px;
+    border-radius:5px;
+    background: #666666;
+    color: #fffdfd;
+    font-size: 10px;
+    text-align:center;
+  
+    display:none; /* hide by default */
+  }
+
+  .email_link:hover:before {
+    display:block;
+  }
 }
 
 .hometown {
@@ -604,6 +655,7 @@ a {
 @media screen and (max-width: 900px) {
   .main-content-container {
     margin-top: 0;
+    overflow-y: scroll;
   }
 
   .experience-box-right {
@@ -618,16 +670,28 @@ a {
     margin: 8vh 5vw;
   }
 
+  .main-content.experience {
+    padding-bottom: 80vh; /* I don't know why this works in intrducing scroll*/
+  }
+
   .education-box-right {
+    min-width: 300px;
+    margin-top: 8vh;
+    
     .duration {
       margin-bottom: 10px;
     }
-
-    margin-left: 5vw;
   }
 
   .education-box-left {
-    margin-right: 5vw;
+    min-width: 300px;
+
+    .education-wrapper > .advisor {
+      margin-bottom: 0px;
+    }
+
+    .education-wrapper > .duration {
+      margin: 5px 0 8px 0;
   }
 
   .education-box-right .education-wrapper:first-of-type {
