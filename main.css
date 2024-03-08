@@ -340,12 +340,17 @@ a {
   list-style: none;
   background-color: rgba(255, 255, 255, 0.12);
   border-radius: 12.5rem;
-  height: 52px
+  height: 5vh;
   width: fit-content;
   padding: 0 2rem;
   overflow-x: scroll;
   margin: 0 2rem;
-  height: 52px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.navigation::-webkit-scrollbar {
+  display: none;
 }
 
 .navigation-item {
@@ -391,11 +396,11 @@ a {
 }
 
 .main-content.education {
-  max-width: 50vw;
+  max-width: 35vw;
 }
 
 .main-content.experience {
-  max-width: 60vw;
+  max-width: 70vw;
 }
 
 .main-content.publications {
@@ -456,9 +461,8 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  width: 37%;
+  width: 35%;
   min-width: 300px;
-  max-width: 500px;
   align-items: start;
 }
 
@@ -466,9 +470,8 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  width: 37%;
+  width: 35%;
   min-width: 300px;
-  max-width: 500px;
   align-items: start;
 }
 
@@ -692,6 +695,7 @@ a {
 
     .education-wrapper > .duration {
       margin: 5px 0 8px 0;
+    }
   }
 
   .education-box-right .education-wrapper:first-of-type {
@@ -700,5 +704,14 @@ a {
     .uni-name {
       margin-top: 2vh;
     }
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .main-content.experience {
+    max-width: 1800px;
+  }
+  .experience-box-left, .experience-box-right {
+    width: 40%;
   }
 }
