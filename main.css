@@ -495,11 +495,11 @@ a {
   }
 
   .position {
-    font-size: 2.2vh;
+    font-size: 2.4vh;
   }
 
   .company {
-    font-size: 1.5vh;
+    font-size: 1.8vh;
     font-style: italic;
     margin-top: 3px;
   }
@@ -510,7 +510,7 @@ a {
   }
 
   .duration {
-    font-size: 1.5vh;
+    font-size: 1.8vh;
     font-style: italic;
     margin-top: 3px;
   }
