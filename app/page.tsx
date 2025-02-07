@@ -182,11 +182,9 @@ export default function Personal() {
           </p>
         </div>
         <div className='flex w-full mt-14'>
-          <div className="absolute left-[-6px]">
-            <ResumeLink key={"Resume"} link={"/resume"}>
-              {"Resume"}
-            </ResumeLink>
-          </div>
+          <ResumeLink key={"Resume"} link={"/resume"}>
+            {"Resume"}
+          </ResumeLink>
         </div>
       </motion.section>
 
