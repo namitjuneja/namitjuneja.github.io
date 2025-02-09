@@ -136,7 +136,7 @@ function ResumeLink({
       <a
         href={link}
         target="_blank"
-        className="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full px-2.5 py-1 text-sm text-black border border-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50 dark:border-zinc-400 dark:border dark:text-zinc-400 dark:hover:bg-zinc-400 dark:hover:text-black"
+        className="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full px-2.5 py-1 text-sm text-black border border-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50 dark:border-zinc-400 dark:border dark:text-zinc-400 dark:hover:border-zinc-50 dark:hover:text-zinc-50"
       >
         {children}
         <svg
