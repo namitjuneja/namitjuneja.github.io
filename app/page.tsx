@@ -223,7 +223,7 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium selection:bg-highlight_yellow/50 selection:text-black dark:selection:bg-highlight_yellow_dark/10 dark:selection:text-highlight_yellow_dark">Work Experience</h3>
+        <h3 className="mb-5 text-lg font-medium selection:bg-highlight_yellow/50 selection:text-black dark:selection:bg-highlight_yellow_dark/10 dark:selection:text-highlight_yellow_dark">Experience</h3>
         <div className="flex flex-col space-y-2 selection:bg-highlight_yellow/50 selection:text-black dark:selection:bg-highlight_yellow_dark/10 dark:selection:text-highlight_yellow_dark">
           {WORK_EXPERIENCE.map((job) => (
             <a
