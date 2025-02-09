@@ -171,7 +171,7 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <div className="flex-1">
+        <div className="flex-1 selection:bg-highlight_yellow selection:text-black dark:selection:bg-yellow-300">
           <p className="text-zinc-600 dark:text-zinc-400">
           I am a PhD student in the Data Science Lab at Univeristy at Buffalo, 
           advised by Dr. Varun Chandola.
@@ -193,14 +193,14 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium">Selected Projects</h3>
+        <h3 className="mb-5 text-lg font-medium selection:bg-highlight_yellow selection:text-black dark:selection:bg-yellow-300">Selected Projects</h3>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {PROJECTS.map((project) => (
             <div key={project.name} className="space-y-2">
               {/* <div className="relative rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
                 <ProjectVideo src={project.video} />
               </div> */}
-              <div className="px-1">
+              <div className="px-1 selection:bg-highlight_yellow selection:text-black dark:selection:bg-yellow-300">
                 <a
                   className="font-base group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
                   href={project.link}
@@ -223,8 +223,8 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium">Work Experience</h3>
-        <div className="flex flex-col space-y-2">
+        <h3 className="mb-5 text-lg font-medium selection:bg-highlight_yellow selection:text-black dark:selection:bg-yellow-300">Work Experience</h3>
+        <div className="flex flex-col space-y-2 selection:bg-highlight_yellow selection:text-black dark:selection:bg-yellow-300">
           {WORK_EXPERIENCE.map((job) => (
             <a
               className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
@@ -261,8 +261,8 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-3 text-lg font-medium">Publications</h3>
-        <div className="flex flex-col space-y-0">
+        <h3 className="mb-3 text-lg font-medium selection:bg-highlight_yellow selection:text-black dark:selection:bg-yellow-300">Publications</h3>
+        <div className="flex flex-col space-y-0 selection:bg-highlight_yellow selection:text-black dark:selection:bg-yellow-300">
           <AnimatedBackground
             enableHover
             className="h-full w-full rounded-lg bg-zinc-100 dark:bg-zinc-900/80"
@@ -320,14 +320,14 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium">Connect</h3>
-        <p className="mb-5 text-zinc-600 dark:text-zinc-400">
+        <h3 className="mb-5 text-lg font-medium selection:bg-highlight_yellow selection:text-black dark:selection:bg-yellow-300">Connect</h3>
+        <p className="mb-5 text-zinc-600 dark:text-zinc-400 selection:bg-highlight_yellow selection:text-black dark:selection:bg-yellow-300">
           Feel free to contact me at{' '}
-          <a className="underline dark:text-zinc-300" href={`mailto:${EMAIL}`}>
+          <a className="underline dark:text-zinc-300 selection:bg-highlight_yellow selection:text-black dark:selection:bg-yellow-300" href={`mailto:${EMAIL}`}>
             {EMAIL}
           </a>
         </p>
-        <div className="flex items-center justify-start space-x-3">
+        <div className="flex items-center justify-start space-x-3 selection:bg-highlight_yellow selection:text-black dark:selection:bg-yellow-300">
           {SOCIAL_LINKS.map((link) => (
             <MagneticSocialLink key={link.label} link={link.link}>
               {link.label}
