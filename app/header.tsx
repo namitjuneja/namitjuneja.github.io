@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export function Header() {
   return (
-    <header className="mb-8 flex items-center justify-between selection:bg-highlight_yellow selection:text-black dark:selection:bg-yellow-300">
+    <header className="mb-8 flex items-center justify-between selection:bg-highlight_yellow/50 selection:text-black dark:selection:bg-highlight_yellow_dark/10 dark:selection:text-highlight_yellow_dark">
       <div>
         <Link href="/" className="font-medium text-black dark:text-white">
           Namit Juneja
