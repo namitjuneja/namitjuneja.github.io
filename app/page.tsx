@@ -227,7 +227,7 @@ export default function Personal() {
         <div className="flex flex-col space-y-2 selection:bg-highlight_yellow/50 selection:text-black dark:selection:bg-highlight_yellow_dark/10 dark:selection:text-highlight_yellow_dark">
           {WORK_EXPERIENCE.map((job) => (
             <a
-              className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
+              className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1.2px] dark:bg-zinc-600/30 hover:dark:bg-zinc-600/70 transition duration-700 ease-in-out"
               href={job.link}
               target="_blank"
               rel="noopener noreferrer"
@@ -235,7 +235,7 @@ export default function Personal() {
             >
               <Spotlight
                 className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
-                size={64}
+                size={80}
               />
               <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
                 <div className="relative flex w-full flex-row justify-between">
