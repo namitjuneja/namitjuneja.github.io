@@ -4,6 +4,7 @@ import './globals.css'
 import { Header } from './header'
 import { Footer } from './footer'
 import { ThemeProvider } from 'next-themes'
+import Script from 'next/script';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -34,6 +35,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+      <Script
+          src="https://cdn.seline.so/seline.js"
+          data-token={process.env.SELINE_TOKEN}
+          strategy="afterInteractive"
+        />
+      </head>
       <body
         className={`${geist.variable} ${geistMono.variable} bg-white tracking-tight antialiased dark:bg-zinc-950`}
       >
