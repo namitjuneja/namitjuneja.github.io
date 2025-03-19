@@ -10,6 +10,14 @@ import {
   MorphingDialogClose,
   MorphingDialogContainer,
 } from '@/components/ui/morphing-dialog'
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from '@/components/ui/accordion';
+import PlusMinusToggle from '@/components/ui/plusMinusToggle';
+import parse from 'html-react-parser';
 import Link from 'next/link'
 import { AnimatedBackground } from '@/components/ui/animated-background'
 import {
@@ -226,33 +234,50 @@ export default function Personal() {
         <h3 className="mb-5 text-lg font-medium selection:bg-highlight_yellow/50 selection:text-black dark:selection:bg-highlight_yellow_dark/10 dark:selection:text-highlight_yellow_dark">Experience</h3>
         <div className="flex flex-col space-y-2 selection:bg-highlight_yellow/50 selection:text-black dark:selection:bg-highlight_yellow_dark/10 dark:selection:text-highlight_yellow_dark">
           {WORK_EXPERIENCE.map((job) => (
-            <a
-              className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1.2px] dark:bg-zinc-600/30 hover:dark:bg-zinc-600/70 transition duration-700 ease-in-out"
-              href={job.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              key={job.id}
-            >
-              <Spotlight
-                className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
-                size={80}
-              />
-              <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
-                <div className="relative flex w-full flex-row justify-between">
-                  <div>
-                    <h4 className="font-normal dark:text-zinc-100">
-                      {job.title}
-                    </h4>
-                    <p className="text-zinc-500 dark:text-zinc-400">
-                      {job.company}
-                    </p>
+            <Accordion
+              className='flex w-full flex-col divide-y divide-zinc-200 dark:divide-zinc-700'
+              transition={{ duration: 0.2, ease: 'easeInOut' }}
+              key={job.id}>
+              <a className="group relative w-full overflow-hidden rounded-2xl bg-zinc-300/30 p-[1.2px] dark:bg-zinc-600/30 hover:dark:bg-zinc-600/70 transition duration-700 ease-in-out hover:cursor-pointer"
+                rel="noopener noreferrer">
+                  <Spotlight
+                    className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
+                    size={80} />
+                    <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
+                    <AccordionItem value='getting-started'>
+                      <AccordionTrigger className='w-full text-left text-zinc-950 dark:text-zinc-50'>
+                        <div className='flex items-center justify-between hover:cursor-pointer'>
+                          <div className="relative flex w-full flex-row justify-between">
+                            <div>
+                              <h4 className="font-normal dark:text-zinc-100">
+                                {job.title}
+                              </h4>
+                              <p className="text-sm text-zinc-500 dark:text-zinc-400">
+                                {job.company}
+                              </p>
+                            </div>
+                            <div className='flex flex-col justify-between'>
+                              <p className="text-zinc-600 dark:text-zinc-400">
+                                {job.start} - {job.end}
+                              </p>
+                              <div className="text-sm text-zinc-500 dark:text-zinc-400 flex justify-end md:opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out">
+                                <PlusMinusToggle />
+                                {/* <ChevronDown className='h-4 w-4 text-zinc-950 transition-transform duration-200 group-data-expanded:-rotate-180 dark:text-zinc-400' /> */}
+                              </div>
+                            </div>
+                        </div>
+                        {/* <ChevronUp className='h-4 w-4 text-zinc-950 transition-transform duration-200 group-data-expanded:-rotate-180 dark:text-zinc-50' /> */}
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <div className='pt-5 text-sm text-zinc-500 dark:text-zinc-400'>
+                        {parse(job.description)}
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
                   </div>
-                  <p className="text-zinc-600 dark:text-zinc-400">
-                    {job.start} - {job.end}
-                  </p>
-                </div>
-              </div>
-            </a>
+              </a>
+            </Accordion>
           ))}
         </div>
       </motion.section>
