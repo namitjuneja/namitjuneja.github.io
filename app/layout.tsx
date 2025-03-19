@@ -41,6 +41,18 @@ export default function RootLayout({
           data-token={process.env.SELINE_TOKEN}
           strategy="afterInteractive"
         />
+      <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=G-TY5XMP0GSB`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-TY5XMP0GSB');
+          `}
+</Script>
       </head>
       <body
         className={`${geist.variable} ${geistMono.variable} bg-white tracking-tight antialiased dark:bg-zinc-950`}
