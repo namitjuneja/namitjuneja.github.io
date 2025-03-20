@@ -16,6 +16,8 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from '@/components/ui/accordion';
+import { useState } from 'react'
+import { ChevronDown } from 'lucide-react';
 import PlusMinusToggle from '@/components/ui/plusMinusToggle';
 import parse from 'html-react-parser';
 import Link from 'next/link'
@@ -27,6 +29,12 @@ import {
   EMAIL,
   SOCIAL_LINKS,
 } from './data'
+import {
+  Disclosure,
+  DisclosureContent,
+  DisclosureTrigger,
+} from '@/components/ui/disclosure';
+
 
 const VARIANTS_CONTAINER = {
   hidden: { opacity: 0 },
@@ -168,6 +176,7 @@ function ResumeLink({
 }
 
 export default function Personal() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <motion.main
       className="space-y-24"
@@ -187,8 +196,30 @@ export default function Personal() {
           <p className="mt-2 text-zinc-600 dark:text-zinc-400">
           I do research in machine learning with a focus on Bayesian Optimization and Gaussian Processes.
           My work primarily focusses on making these methods more cost efficient and scalable to higher dimensions. 
-          </p>
+          </p>      
+          <Disclosure onOpenChange={setIsOpen} className=''>
+            <DisclosureContent>
+              <div className='overflow-hidden pb-3'>
+                    <p className="mt-2 text-zinc-600 dark:text-zinc-400">
+                      My research interests are:
+                      </p>
+                      <ul className="list-disc text-zinc-600 dark:text-zinc-400 list-outside ml-5">
+                        <li>Sequential decision-making under uncertainty (e.g., design optimization, discovery, predictive models, decision policies) in a resource-efficient manner.</li>
+                        <li>Probabilistic modeling (Gaussian processes, deep models, and their combination) over combinatorial structured data.</li>
+                        <li>Combining domain knowledge and data to create structured models with uncertainty quantification.</li>
+                      </ul>
+              </div>
+            </DisclosureContent>
+            <DisclosureTrigger>
+              <button 
+              className='w-full pt-5 flex items-center justify-end text-right text-[0.6rem] text-zinc-600 dark:text-zinc-400' type='button'>
+                 Show {isOpen ? 'less' : 'more'}
+                <ChevronDown className={`h-4 w-4 ml-[0.5px] text-3xl text-zinc-600 dark:text-zinc-400 transition-transform duration-200 ${isOpen ? '-rotate-180' : ''}`} />
+              </button>
+            </DisclosureTrigger>
+          </Disclosure>
         </div>
+
         <div className='flex w-full mt-14'>
           <ResumeLink key={"Resume"} link={"/resume"}>
             {"Resume"}
