@@ -109,7 +109,7 @@ function MagneticSocialLink({
       <a
         href={link}
         target="_blank"
-        className="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full bg-zinc-100 px-2.5 py-1 text-sm text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
+        className="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full bg-zinc-100 px-2.5 py-1 mt-3 text-sm text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
       >
         {children}
         <svg
@@ -184,10 +184,17 @@ export default function Personal() {
           I am a PhD student in the Data Science Lab at Univeristy at Buffalo, 
           advised by Dr. Varun Chandola.
           </p>
-          <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-          I do research in machine learning with a focus on Bayesian Optimization and Gaussian Processes.
-          My work primarily focusses on making these methods more cost efficient and scalable to higher dimensions. 
+          <p className="mt-5 text-zinc-600 dark:text-zinc-400">
+          My research focuses on advancing Bayesian Optimization and Gaussian Processes, with particular emphasis on enhancing their cost efficiency and scalability to high-dimensional problems. 
           </p>
+          <p className="mt-5 text-zinc-600 dark:text-zinc-400">
+          I am passionate about research challenges that arise when developing resource-efficient algorithms for complex optimization problems. I'm particularly interested in: 
+          </p>
+          <ul className="ml-5 mt-3 list-disc text-zinc-600 dark:text-zinc-400 space-y-2 list-outside">
+            <li>Sequential decision-making under uncertainty for design optimization, discovery, predictive models, decision policies etc.</li>
+            <li>Probabilistic modeling with Gaussian Processes and deep learning over combinatorial structured data</li>
+            <li>Combining domain knowledge and data to create structured models with uncertainty quantification</li>
+          </ul>
         </div>
         <div className='flex w-full mt-14'>
           <ResumeLink key={"Resume"} link={"/resume"}>
@@ -346,13 +353,13 @@ export default function Personal() {
         transition={TRANSITION_SECTION}
       >
         <h3 className="mb-5 text-lg font-medium selection:bg-highlight_yellow/50 selection:text-black dark:selection:bg-highlight_yellow_dark/10 dark:selection:text-highlight_yellow_dark">Connect</h3>
-        <p className="mb-5 text-zinc-600 dark:text-zinc-400 selection:bg-highlight_yellow/50 selection:text-black dark:selection:bg-highlight_yellow_dark/10 dark:selection:text-highlight_yellow_dark">
+        <p className="mb-2 text-zinc-600 dark:text-zinc-400 selection:bg-highlight_yellow/50 selection:text-black dark:selection:bg-highlight_yellow_dark/10 dark:selection:text-highlight_yellow_dark">
           Feel free to contact me at{' '}
           <a className="underline dark:text-zinc-300 selection:bg-highlight_yellow/50 selection:text-black dark:selection:bg-highlight_yellow_dark/10 dark:selection:text-highlight_yellow_dark" href={`mailto:${EMAIL}`}>
             {EMAIL}
           </a>
         </p>
-        <div className="flex items-center justify-start space-x-3 selection:bg-highlight_yellow/50 selection:text-black dark:selection:bg-highlight_yellow_dark/10 dark:selection:text-highlight_yellow_dark">
+        <div className="flex flex-wrap items-center justify-start space-x-3 selection:bg-highlight_yellow/50 selection:text-black dark:selection:bg-highlight_yellow_dark/10 dark:selection:text-highlight_yellow_dark">
           {SOCIAL_LINKS.map((link) => (
             <MagneticSocialLink key={link.label} link={link.link}>
               {link.label}
